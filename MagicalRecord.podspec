@@ -12,7 +12,9 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.8'
   s.tvos.deployment_target = '9.0'
   s.watchos.deployment_target = '2.0'
-
+  s.static_framework = true
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
+  
   s.subspec 'Core' do |sp|
     sp.framework    = 'CoreData'
     sp.header_dir   = 'MagicalRecord'
